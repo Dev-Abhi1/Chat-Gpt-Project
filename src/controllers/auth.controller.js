@@ -60,7 +60,7 @@ async function postLoginController(req, res) {
         return res.redirect('/login?error=Invalid password');
     }
 
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET_KEY);
 
     res.cookie('token', token);
 
