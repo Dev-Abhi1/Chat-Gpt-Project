@@ -30,7 +30,7 @@ async function postRegisterController(req, res) {
         password: hashedPassword
     })
 
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET)
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET_KEY)
 
     res.cookie('token', token);
 
